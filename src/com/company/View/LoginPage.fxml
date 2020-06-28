@@ -1,49 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.shape.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="260.0" prefWidth="321.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Controller.LoginPageController">
+<AnchorPane prefHeight="290.0" prefWidth="345.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Controller.LoginPageController">
    <children>
       <BorderPane layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
          <center>
             <Group BorderPane.alignment="CENTER">
                <children>
-                  <Label layoutX="134.0" layoutY="152.0" text="Username: ">
-                     <font>
-                        <Font name="FreeMono Bold" size="22.0" />
-                     </font>
-                  </Label>
-                  <Button fx:id="registerBTN" layoutX="340.0" layoutY="228.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: F0F8FF;" text="Register">
+                  <Button fx:id="forgotPasswordBTN" layoutX="107.0" layoutY="248.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="293.0" style="-fx-background-color: F0F8FF;" text="Forgot your password?" underline="true">
                      <font>
                         <Font name="DejaVu Serif Bold" size="13.0" />
                      </font>
                   </Button>
-                  <Button fx:id="loginBTN" layoutX="134.0" layoutY="228.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="199.0" style="-fx-background-color: BBBBBB;" text="Login">
-                     <font>
-                        <Font name="DejaVu Serif Bold" size="13.0" />
-                     </font>
-                  </Button>
-                  <Circle fill="#801fff" layoutX="146.0" layoutY="89.0" radius="12.0" stroke="#801fff" strokeType="INSIDE" />
-                  <PasswordField fx:id="passwordTF" layoutX="266.0" layoutY="186.0" promptText="password" />
-                  <Label layoutX="164.0" layoutY="59.0" text="Login">
-                     <font>
-                        <Font name="DejaVu Serif Condensed Bold" size="49.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="134.0" layoutY="187.0" text="Password: ">
-                     <font>
-                        <Font name="FreeMono Bold" size="22.0" />
-                     </font>
-                  </Label>
-                  <Line endX="100.0" fill="#27c9c9" layoutX="237.0" layoutY="131.0" startX="-100.0" strokeWidth="5.0" />
-                  <TextField fx:id="usernameTF" layoutX="266.0" layoutY="151.0" promptText="username" />
-                  <Label fx:id="warningLBL" layoutX="135.0" layoutY="270.0" prefHeight="22.0" prefWidth="293.0" textFill="#7f1eff" underline="true">
+                  <Group layoutX="-28.0" layoutY="-13.0">
+                     <children>
+                        <Label layoutX="134.0" layoutY="152.0" text="Username: ">
+                           <font>
+                              <Font name="FreeMono Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="registerBTN" layoutX="340.0" layoutY="228.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: F0F8FF;" text="Register">
+                           <font>
+                              <Font name="DejaVu Serif Bold" size="13.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="loginBTN" layoutX="134.0" layoutY="228.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="199.0" style="-fx-background-color: BBBBBB;" text="Login">
+                           <font>
+                              <Font name="DejaVu Serif Bold" size="13.0" />
+                           </font>
+                        </Button>
+                        <Circle fill="#801fff" layoutX="146.0" layoutY="89.0" radius="12.0" stroke="#801fff" strokeType="INSIDE" />
+                        <PasswordField fx:id="passwordTF" layoutX="266.0" layoutY="186.0" promptText="password" />
+                        <Label layoutX="164.0" layoutY="59.0" text="Login">
+                           <font>
+                              <Font name="DejaVu Serif Condensed Bold" size="49.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="134.0" layoutY="187.0" text="Password: ">
+                           <font>
+                              <Font name="FreeMono Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <Line endX="100.0" fill="#27c9c9" layoutX="237.0" layoutY="131.0" startX="-100.0" strokeWidth="5.0" />
+                        <TextField fx:id="usernameTF" layoutX="266.0" layoutY="151.0" promptText="username" />
+                     </children>
+                  </Group>
+                  <Label fx:id="warningLBL" layoutX="107.0" layoutY="281.0" prefHeight="22.0" prefWidth="293.0" textFill="#7f1eff" underline="true">
                      <font>
                         <Font name="FreeMono Bold" size="14.0" />
                      </font>

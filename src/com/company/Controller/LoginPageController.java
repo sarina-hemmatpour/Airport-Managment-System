@@ -1,20 +1,21 @@
 package com.company.Controller;
-import java.io.FileReader;
+import java.io.*;
 import java.io.FileReader.*;
 import com.company.Main;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -26,6 +27,7 @@ public class LoginPageController implements Initializable
     @FXML Button loginBTN;
     @FXML Button registerBTN;
     @FXML Label warningLBL;
+    @FXML Button forgotPasswordBTN;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -37,10 +39,37 @@ public class LoginPageController implements Initializable
                 ex.printStackTrace();
             }
         });
+
+        registerBTN.setOnAction(e -> {
+            try {
+                registerBTNaction(e);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
+
+        forgotPasswordBTN.setOnAction(e -> setForgotPasswordBTNaction(e));
     }
 
+    private void setForgotPasswordBTNaction(ActionEvent e)
+    {
 
-    public void loginBTNaction(ActionEvent e) throws FileNotFoundException {
+    }
+
+    private void registerBTNaction(ActionEvent e) throws IOException {
+        //loading register page:
+        FXMLLoader registerPageLoader=new FXMLLoader(Main.class.getResource("View/RegisterPage.fxml"));
+
+        registerPageLoader.load();
+
+        Stage registerStage =new Stage(StageStyle.UNDECORATED);
+        registerStage.setTitle("Register");
+        registerStage.setScene(new Scene(registerPageLoader.getRoot()));
+        registerStage.show();
+
+    }
+
+    private void loginBTNaction(ActionEvent e) throws FileNotFoundException {
         if (usernameTF.getText().equals("") || passwordTF.getText().equals(""))
         {
             warningLBL.setText("Complete all the fields!!!");
