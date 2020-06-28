@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="290.0" prefWidth="345.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Controller.LoginPageController">
+<AnchorPane prefHeight="290.0" prefWidth="345.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Controller.LoginPageController">
    <children>
       <BorderPane layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
          <center>
             <Group BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="registerBTN1" layoutX="107.0" layoutY="248.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="293.0" style="-fx-background-color: F0F8FF;" text="Forgot your password?" underline="true">
+                  <Button fx:id="forgotPasswordBTN" layoutX="107.0" layoutY="248.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="293.0" style="-fx-background-color: F0F8FF;" text="Forgot your password?" underline="true">
                      <font>
                         <Font name="DejaVu Serif Bold" size="13.0" />
                      </font>

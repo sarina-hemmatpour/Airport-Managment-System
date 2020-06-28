@@ -48,12 +48,26 @@ public class LoginPageController implements Initializable
             }
         });
 
-        forgotPasswordBTN.setOnAction(e -> setForgotPasswordBTNaction(e));
+        forgotPasswordBTN.setOnAction(e -> {
+            try {
+                setForgotPasswordBTNaction(e);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
     }
 
-    private void setForgotPasswordBTNaction(ActionEvent e)
-    {
+    private void setForgotPasswordBTNaction(ActionEvent e) throws IOException {
 
+
+        FXMLLoader fppLoader=new FXMLLoader(Main.class.getResource("View/getPasswordPage.fxml"));
+
+
+        fppLoader.load();
+
+        Stage fppStage=new Stage(StageStyle.UNDECORATED);
+        fppStage.setScene(new Scene(fppLoader.getRoot()));
+        fppStage.show();
     }
 
     private void registerBTNaction(ActionEvent e) throws IOException {
