@@ -1,15 +1,17 @@
 package com.company;
 
-import com.company.Model.Employee;
-import com.company.Model.Manager;
-import com.company.Model.Passanger;
+import com.company.Model.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javax.swing.text.DateFormatter;
 import java.io.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Main extends Application {
 
@@ -18,6 +20,9 @@ public class Main extends Application {
     public static ArrayList<Manager> managers=new ArrayList<>();
     public static ArrayList<Employee> employees=new ArrayList<>();
     public static ArrayList<Passanger> passangers=new ArrayList<>();
+    public static ArrayList<Airplane> airplanes=new ArrayList<>();
+    public static ArrayList<Ticket> tickets=new ArrayList<>();
+    public static ArrayList<Flight> flights=new ArrayList<>();
 
     public static Stage loginPageStage;
 
@@ -25,6 +30,12 @@ public class Main extends Application {
 
 
     public static void main(String[] args) throws IOException {
+
+//        System.out.println(LocalDateTime.now());
+
+//        DateTimeFormatter dtf =DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+//        LocalDateTime now=LocalDateTime.now();
+//        System.out.println(dtf.format(now));
 
         ////////////////////////////////////////////////////////////////////////////
         //writing superAdmin in file

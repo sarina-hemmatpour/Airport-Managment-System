@@ -15,6 +15,10 @@ public class Flight
     private ArrayList<Passanger> passangers;
     private String flightTime;
 
+    enum Status{ DONE, DOING , notDONE }
+    private Status flightStatus;
+
+
     public String getId() {
         return id;
     }

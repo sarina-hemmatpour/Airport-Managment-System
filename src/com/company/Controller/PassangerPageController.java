@@ -10,34 +10,25 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SuperAdminPageController implements Initializable
-{
+public class PassangerPageController implements Initializable {
 
-    @FXML Button profileBTN;
-    @FXML Button massegeBTN;
-    @FXML Button exitBTN;
-    @FXML Button managerBTN;
-    @FXML Button employeeBTN;
-    @FXML Button pfBTN;
-    @FXML Button recordBTN;
-    @FXML Button passangerBTN;
-    @FXML Button financialUnitBTN;
     @FXML Label infoLBL;
-    @FXML Label positionLBL;
-
+    @FXML Label creditLBL;
+    @FXML Label warningLBL;
+    @FXML Button exitBTN;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        infoLBL.setText(Main.superAdmin.getName() + " " + Main.superAdmin.getLastname());
-        positionLBL.setText("Super Admin");
+        infoLBL.setText(Main.passangers.get(LoginPageController.loginUserIndex).getName()+
+                " "+Main.passangers.get(LoginPageController.loginUserIndex).getLastname());
+        creditLBL.setText(Main.passangers.get(LoginPageController.loginUserIndex).getCredit());
 
         exitBTN.setOnAction(e -> {
             ((Stage)exitBTN.getScene().getWindow()).close();
             Main.loginPageStage.show();
         });
-
 
     }
 }

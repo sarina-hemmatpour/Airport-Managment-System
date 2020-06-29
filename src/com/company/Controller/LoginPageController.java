@@ -30,6 +30,9 @@ public class LoginPageController implements Initializable
     @FXML Label warningLBL;
     @FXML Button forgotPasswordBTN;
 
+    public static int loginUserIndex;
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -110,6 +113,7 @@ public class LoginPageController implements Initializable
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
+
                     Stage superAdminStage=new Stage(StageStyle.UNDECORATED);
                     superAdminStage.setScene(new Scene(sapLoader.getRoot()));
                     superAdminStage.show();
@@ -135,6 +139,7 @@ public class LoginPageController implements Initializable
                             //password is correct
                             //loading manager page
                             //***********************************************
+                            loginUserIndex=i;
                             managerIsFound=true;
                             break;
                         }
@@ -162,6 +167,7 @@ public class LoginPageController implements Initializable
                                 //password is correct
                                 //loading employee page
                                 //***********************************************
+                                loginUserIndex=i;
                                 employeeIsFound=true;
                                 break;
                             }
@@ -190,6 +196,21 @@ public class LoginPageController implements Initializable
                                 //password is correct
                                 //loading passanger page
                                 //***********************************************
+                                ((Stage)loginBTN.getScene().getWindow()).close();
+
+                                FXMLLoader passangerLoader=new FXMLLoader(Main.class.getResource("View/PassangerPage.fxml"));
+
+                                try {
+                                    passangerLoader.load();
+                                } catch (IOException ex) {
+                                    ex.printStackTrace();
+                                }
+
+                                Stage passangerStage=new Stage(StageStyle.UNDECORATED);
+                                passangerStage.setScene(new Scene(passangerLoader.getRoot()));
+                                passangerStage.show();
+
+                                loginUserIndex=i;
                                 passangerIsFound=true;
                                 break;
                             }
