@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="382.0" prefWidth="422.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Controller.SuperAdminPageController">
+  <tabs>
+    <Tab style="-fx-background-color: EE82EE;" text="Account">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="344.0" prefWidth="414.0" style="-fx-background-color: pink;">
+               <children>
+                  <Group layoutX="2.0" layoutY="-8.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                     <children>
+                        <Label layoutX="65.0" layoutY="129.0" style="-fx-background-color: lightblue;" text="Employees">
+                           <font>
+                              <Font name="FreeMono Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="financialUnitBTN" layoutX="19.0" layoutY="258.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="29.0" style="-fx-background-color: gray;" />
+                        <Label layoutX="65.0" layoutY="174.0" style="-fx-background-color: lightblue;" text="Passangers">
+                           <font>
+                              <Font name="FreeMono Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Line endX="100.0" layoutX="149.0" layoutY="329.0" startX="-100.0" stroke="#0000001c" strokeWidth="2.0" />
+                        <Line endX="100.0" layoutX="149.0" layoutY="241.0" startX="-100.0" stroke="#0000001c" strokeWidth="2.0" />
+                        <Label layoutX="65.0" layoutY="262.0" style="-fx-background-color: lightblue;" text="Financial Unit">
+                           <font>
+                              <Font name="FreeMono Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="infoLBL" layoutX="65.0" layoutY="25.0" prefHeight="21.0" prefWidth="278.0" textAlignment="CENTER">
+                           <font>
+                              <Font name="DejaVu Serif Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="massegeBTN" layoutX="346.0" layoutY="25.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="39.0" style="-fx-background-color: BBBBBB;">
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="36.0">
+                                 <image>
+                                    <Image url="@../../../../../../Pictures/letter-png-big-image-png-2400.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Line endX="100.0" layoutX="119.0" layoutY="71.0" startX="-100.0" stroke="#72216a" strokeMiterLimit="5.0" strokeWidth="2.0" />
+                        <Button fx:id="recordBTN" layoutX="19.0" layoutY="301.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="29.0" style="-fx-background-color: F0F8FF;" />
+                        <Button fx:id="pfBTN" layoutX="19.0" layoutY="213.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="29.0" style="-fx-background-color: F0F8FF;" />
+                        <Label layoutX="65.0" layoutY="301.0" style="-fx-background-color: lightblue;" text="Records">
+                           <font>
+                              <Font name="FreeMono Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="exitBTN" layoutX="346.0" layoutY="75.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="47.0" style="-fx-background-color: BBBBBB;">
+                           <graphic>
+                              <ImageView fitHeight="37.0" fitWidth="37.0">
+                                 <image>
+                                    <Image url="@../../../../../../Pictures/htd.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="managerBTN" layoutX="19.0" layoutY="84.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="29.0" style="-fx-background-color: gray;" />
+                        <Label layoutX="65.0" layoutY="88.0" style="-fx-background-color: lightblue;" text="Manager">
+                           <font>
+                              <Font name="FreeMono Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="profileBTN" layoutX="9.0" layoutY="22.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="35.0" style="-fx-background-color: BBBBBB;">
+                           <graphic>
+                              <ImageView fitHeight="32.0" fitWidth="31.0">
+                                 <image>
+                                    <Image url="@../../../../../../Pictures/external-content.duckduckgo.com.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="employeeBTN" layoutX="19.0" layoutY="125.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="29.0" style="-fx-background-color: F0F8FF;" />
+                        <Label fx:id="positionLBL" layoutX="65.0" layoutY="46.0" prefHeight="15.0" prefWidth="281.0" textFill="#5211947d">
+                           <font>
+                              <Font name="DejaVu Serif Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Line endX="100.0" layoutX="149.0" layoutY="198.0" startX="-100.0" stroke="#0000001c" strokeWidth="2.0" />
+                        <Line endX="100.0" layoutX="299.0" layoutY="71.0" startX="-100.0" stroke="#72216a" strokeWidth="2.0" />
+                        <Button fx:id="passangerBTN" layoutX="19.0" layoutY="170.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="29.0" style="-fx-background-color: gray;" />
+                        <Label layoutX="65.0" layoutY="217.0" style="-fx-background-color: lightblue;" text="Planes &amp; Flights">
+                           <font>
+                              <Font name="FreeMono Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Line endX="100.0" layoutX="149.0" layoutY="153.0" startX="-100.0" stroke="#0000001c" strokeWidth="2.0" />
+                        <Line endX="100.0" layoutX="149.0" layoutY="286.0" startX="-100.0" stroke="#0000001c" strokeWidth="2.0" />
+                        <Line endX="100.0" layoutX="149.0" layoutY="112.0" startX="-100.0" stroke="#0000001c" strokeWidth="2.0" />
+                     </children>
+                  </Group>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>

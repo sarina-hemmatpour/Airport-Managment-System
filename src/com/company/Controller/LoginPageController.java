@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -101,7 +102,17 @@ public class LoginPageController implements Initializable
                     //password is correct
                     warningLBL.setText("");
                     //loding Super admin page
-                    //***********************************************
+                    ((Stage)loginBTN.getScene().getWindow()).close();
+
+                    FXMLLoader sapLoader=new FXMLLoader(Main.class.getResource("View/SuperAdminPage.fxml"));
+                    try {
+                        sapLoader.load();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                    Stage superAdminStage=new Stage(StageStyle.UNDECORATED);
+                    superAdminStage.setScene(new Scene(sapLoader.getRoot()));
+                    superAdminStage.show();
                 }
                 else
                 {

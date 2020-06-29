@@ -19,6 +19,7 @@ public class Main extends Application {
     public static ArrayList<Employee> employees=new ArrayList<>();
     public static ArrayList<Passanger> passangers=new ArrayList<>();
 
+    public static Stage loginPageStage;
 
 
 
@@ -134,7 +135,7 @@ public class Main extends Application {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        Stage loginPageStage=new Stage();
+        loginPageStage=new Stage();
         loginPageStage.setTitle("Login");
         loginPageStage.setScene(new Scene(loginPageLoader.getRoot()));
         loginPageStage.show();
