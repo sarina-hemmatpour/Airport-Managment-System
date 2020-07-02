@@ -9,9 +9,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -43,10 +45,13 @@ public class PassangerPageController implements Initializable {
     @FXML TableColumn ticketsCLM;
 
     static boolean prifileTabIsOpen=false;
+    static boolean messagePageIsOpen=false;
 
     private Tab profileTab;
 
     private static TabPane passangerPageTPfake;
+
+    Stage messageStage;
 
 
     @Override
@@ -71,7 +76,14 @@ public class PassangerPageController implements Initializable {
 
         //exit Button
         exitBTN.setOnAction(e -> {
+
+            if (messagePageIsOpen)
+            {
+                messageStage.close();
+            }
+
             prifileTabIsOpen=false;
+            messagePageIsOpen=false;
             ((Stage)exitBTN.getScene().getWindow()).close();
             Main.loginPageStage.show();
         });
@@ -110,6 +122,23 @@ public class PassangerPageController implements Initializable {
 
         //messege button
         messageBTN.setOnAction(e ->{
+
+            if (!messagePageIsOpen)
+            {
+                FXMLLoader messageLoader=new FXMLLoader(Main.class.getResource("View/MessagePage.fxml"));
+
+                try {
+                    messageLoader.load();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+
+                messageStage=new Stage(StageStyle.UNDECORATED);
+                messageStage.setScene(new Scene(messageLoader.getRoot()));
+                messageStage.show();
+
+                messagePageIsOpen=true;
+            }
 
         });
 
