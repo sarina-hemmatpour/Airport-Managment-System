@@ -197,6 +197,7 @@ public class LoginPageController implements Initializable
                                 //loading passanger page
                                 //***********************************************
                                 ((Stage)loginBTN.getScene().getWindow()).close();
+                                loginUserIndex=i;
 
                                 FXMLLoader passangerLoader=new FXMLLoader(Main.class.getResource("View/PassangerPage.fxml"));
 
@@ -210,7 +211,8 @@ public class LoginPageController implements Initializable
                                 passangerStage.setScene(new Scene(passangerLoader.getRoot()));
                                 passangerStage.show();
 
-                                loginUserIndex=i;
+
+                                System.out.println(loginUserIndex);
                                 passangerIsFound=true;
                                 break;
                             }

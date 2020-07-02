@@ -92,7 +92,7 @@ public class RegisterPageController implements Initializable
 
                         //writing thes information in passanger file
 
-                        FileWriter passangerFW=new FileWriter("Passanger.txt");
+                        FileWriter passangerFW=new FileWriter("Passanger.txt" , true);
                         BufferedWriter passangerBW=new BufferedWriter(passangerFW);
 
                         String toSave=(idTF.getText()+" "+nameTF.getText()+" "+lastnameTF.getText()+" "+
@@ -166,7 +166,7 @@ public class RegisterPageController implements Initializable
             return false;
         }
 
-        if ( (phoneNumberTF.getText().length() !=11) || !(phoneNumberTF.getText().substring(0 , 2).equals("09")))
+        if ( (phoneNumberTF.getText().length() !=11) || !(phoneNumberTF.getText().substring(0 , 2).equals("09")) || !(phoneNumberTF.getText().matches("[0-9]+")))
         {
             return false;
         }

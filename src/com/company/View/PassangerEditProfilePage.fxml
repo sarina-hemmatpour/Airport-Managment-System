@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="465.0" prefWidth="348.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Controller.PassangerEditProfileController">
+   <children>
+      <BorderPane prefHeight="439.0" prefWidth="320.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <center>
+            <Group BorderPane.alignment="CENTER">
+               <children>
+                  <Line endX="100.0" layoutX="191.0" layoutY="184.0" startX="-100.0" />
+                  <Group layoutX="3.0" layoutY="222.0">
+                     <children>
+                        <Label fx:id="warningEmailLBL" layoutX="86.0" layoutY="136.0" prefHeight="13.0" prefWidth="318.0" textFill="#8f1eff" underline="true">
+                           <font>
+                              <Font name="FreeMono Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="editEmailBTN" layoutX="86.0" layoutY="109.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="156.0" style="-fx-background-color: BBBBBB;" text="Edit">
+                           <font>
+                              <Font name="DejaVu Serif Bold" size="9.25" />
+                           </font>
+                        </Button>
+                        <Label layoutX="86.0" layoutY="89.0" text="Email adress:">
+                           <font>
+                              <Font name="FreeMono Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="emailLBL" layoutX="248.0" layoutY="91.0" prefHeight="16.0" prefWidth="155.0">
+                           <font>
+                              <Font name="FreeMono Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="newEmailTF" layoutX="248.0" layoutY="109.0" prefHeight="19.0" prefWidth="158.0" promptText="new email address">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </Group>
+                  <Group layoutY="35.0">
+                     <children>
+                        <Group>
+                           <children>
+                              <Label layoutX="90.0" layoutY="115.0" text="Username:">
+                                 <font>
+                                    <Font name="FreeMono Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="usernameLBL" layoutX="203.0" layoutY="117.0" prefHeight="16.0" prefWidth="172.0">
+                                 <font>
+                                    <Font name="FreeMono Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Group>
+                     </children>
+                  </Group>
+                  <Line endX="100.0" layoutX="191.0" layoutY="383.0" startX="-100.0" />
+                  <Line endX="100.0" layoutX="191.0" layoutY="142.0" startX="-100.0" />
+                  <Line endX="100.0" layoutX="191.0" layoutY="263.0" startX="-100.0" />
+                  <Label layoutX="114.0" layoutY="29.0" text="Profile">
+                     <font>
+                        <Font name="DejaVu Serif Bold" size="26.0" />
+                     </font>
+                  </Label>
+                  <Group layoutY="31.0">
+                     <children>
+                        <Label fx:id="warningPasswordLBL" layoutX="91.0" layoutY="208.0" prefHeight="13.0" prefWidth="272.0" textFill="#8f1eff" underline="true">
+                           <font>
+                              <Font name="FreeMono Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="90.0" layoutY="163.0" prefHeight="20.0" prefWidth="120.0" text="Password:">
+                           <font>
+                              <Font name="FreeMono Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="editPasswordBTN" layoutX="89.0" layoutY="183.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="105.0" style="-fx-background-color: BBBBBB;" text="Edit">
+                           <font>
+                              <Font name="DejaVu Serif Bold" size="9.25" />
+                           </font>
+                        </Button>
+                        <PasswordField fx:id="oldPF" layoutX="204.0" layoutY="163.0" prefHeight="20.0" prefWidth="162.0" promptText="old password">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </PasswordField>
+                        <PasswordField fx:id="newPF" layoutX="204.0" layoutY="183.0" prefHeight="20.0" prefWidth="162.0" promptText="old password">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </PasswordField>
+                     </children>
+                  </Group>
+                  <Line endX="100.0" layoutX="191.0" layoutY="108.0" startX="-100.0" />
+                  <Line endX="100.0" layoutX="191.0" layoutY="59.0" startX="-100.0" strokeWidth="3.0" />
+                  <Line endX="100.0" layoutX="191.0" layoutY="300.0" startX="-100.0" />
+                  <Group>
+                     <children>
+                        <Label layoutX="90.0" layoutY="115.0" text="Lastname: ">
+                           <font>
+                              <Font name="FreeMono Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lastnameLBL" layoutX="203.0" layoutY="117.0" prefHeight="16.0" prefWidth="172.0">
+                           <font>
+                              <Font name="FreeMono Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
+                  <Group>
+                     <children>
+                        <Label fx:id="nameLBL" layoutX="157.0" layoutY="82.0" prefHeight="16.0" prefWidth="211.0">
+                           <font>
+                              <Font name="FreeMono Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="90.0" layoutY="80.0" text="Name: ">
+                           <font>
+                              <Font name="FreeMono Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
+                  <Group layoutY="192.0">
+                     <children>
+                        <Label fx:id="idLBL" layoutX="138.0" layoutY="82.0" prefHeight="16.0" prefWidth="211.0">
+                           <font>
+                              <Font name="FreeMono Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="90.0" layoutY="80.0" text="ID: ">
+                           <font>
+                              <Font name="FreeMono Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
+                  <Group layoutX="43.0" layoutY="121.0">
+                     <children>
+                        <Group layoutX="-42.0" layoutY="202.0">
+                           <children>
+                              <Button fx:id="editPhoneBTN" layoutX="90.0" layoutY="91.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="156.0" style="-fx-background-color: BBBBBB;" text="Edit">
+                                 <font>
+                                    <Font name="DejaVu Serif Bold" size="9.25" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="90.0" layoutY="71.0" text="Phone number:">
+                                 <font>
+                                    <Font name="FreeMono Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="newPhoneTF" layoutX="254.0" layoutY="91.0" prefHeight="19.0" prefWidth="144.0" promptText="new phone number">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </TextField>
+                              <Label fx:id="phoneLBL" layoutX="253.0" layoutY="71.0" prefHeight="20.0" prefWidth="147.0">
+                                 <font>
+                                    <Font name="FreeMono Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Group>
+                        <Label fx:id="warningPhoneLBL" layoutX="48.0" layoutY="319.0" prefHeight="13.0" prefWidth="308.0" textFill="#8f1eff" underline="true">
+                           <font>
+                              <Font name="FreeMono Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
+                  <Circle fill="#8f1eff" layoutX="99.0" layoutY="44.0" radius="9.0" stroke="#8f1eff" strokeType="INSIDE" />
+                  <Button fx:id="closeBTN" layoutX="360.0" layoutY="32.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: F0F8FF;" text="X" textFill="#e10707">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Group>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

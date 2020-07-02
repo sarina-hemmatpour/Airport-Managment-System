@@ -18,6 +18,13 @@ public class Flight
     enum Status{ DONE, DOING , notDONE }
     private Status flightStatus;
 
+    public Status getFlightStatus() {
+        return flightStatus;
+    }
+
+    public void setFlightStatus(Status flightStatus) {
+        this.flightStatus = flightStatus;
+    }
 
     public String getId() {
         return id;

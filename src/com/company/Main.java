@@ -23,6 +23,7 @@ public class Main extends Application {
     public static ArrayList<Airplane> airplanes=new ArrayList<>();
     public static ArrayList<Ticket> tickets=new ArrayList<>();
     public static ArrayList<Flight> flights=new ArrayList<>();
+    public static ArrayList<Message> messages=new ArrayList<>();
 
     public static Stage loginPageStage;
 
@@ -32,7 +33,7 @@ public class Main extends Application {
     public static void main(String[] args) throws IOException {
 
 //        System.out.println(LocalDateTime.now());
-
+//
 //        DateTimeFormatter dtf =DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 //        LocalDateTime now=LocalDateTime.now();
 //        System.out.println(dtf.format(now));
@@ -109,7 +110,7 @@ public class Main extends Application {
         }
 
         //passangers
-        FileReader passangerFR=new FileReader("Passangers.txt");
+        FileReader passangerFR=new FileReader("Passanger.txt");
         BufferedReader passangerBR=new BufferedReader(passangerFR);
 
         String toRead3;
@@ -122,7 +123,27 @@ public class Main extends Application {
 
             passangers.add(tempPassanger);
         }
+
+
+        //messages
+        BufferedReader messageBR=new BufferedReader(new FileReader("Messages.txt"));
+
+        String toRead4;
+
+        while ((toRead4=messageBR.readLine()) != null)
+        {
+            String[] propertiesm=toRead4.split(";");
+
+
+            Message newMessage=new Message(propertiesm[1]);
+            newMessage.setTime(properties[0]);
+
+            messages.add(newMessage);
+        }
         ////////////////////////////////////////
+
+//        System.out.println(passangers.size());
+
 
 
 

@@ -4,14 +4,13 @@ public class Passanger extends Person
 {
     private String credit;
 
-
     public String getCredit() {
         return credit;
     }
 
-    public void setCredit(String credit
-    ) {
+    public void setCredit(String credit) {
         this.credit = credit;
+
     }
 
     public Passanger(String id, String name, String lastname, String username, String password, String phoneNumber, String emailAdress, String credit)
