@@ -32,9 +32,9 @@ public class Airplane
         this.flights = flights;
     }
 
-    public Airplane(String id, String seats, ArrayList<Flight> flights) {
+    public Airplane(String id, String seats) {
         this.id = id;
         this.seats = seats;
-        this.flights = flights;
+        this.flights = new ArrayList<>();
     }
 }

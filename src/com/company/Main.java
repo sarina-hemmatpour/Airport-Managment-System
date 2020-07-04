@@ -140,6 +140,10 @@ public class Main extends Application {
 
             messages.add(newMessage);
         }
+
+        //airplanes
+
+
         ////////////////////////////////////////
 
 //        System.out.println(passangers.size());

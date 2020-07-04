@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -7,11 +8,11 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="382.0" prefWidth="422.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Controller.SuperAdminPageController">
+<TabPane fx:id="superAdminTP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="422.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Controller.SuperAdminPageController">
   <tabs>
     <Tab style="-fx-background-color: EE82EE;" text="Account">
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="344.0" prefWidth="414.0" style="-fx-background-color: pink;">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="454.0" prefWidth="422.0" style="-fx-background-color: pink;">
                <children>
                   <Group layoutX="2.0" layoutY="-8.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
                      <children>
@@ -42,7 +43,7 @@
                            <graphic>
                               <ImageView fitHeight="26.0" fitWidth="36.0">
                                  <image>
-                                    <Image url="@../../../../../../Pictures/letter-png-big-image-png-2400.png" />
+                                    <Image url="@letter-png-big-image-png-2400.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -59,7 +60,7 @@
                            <graphic>
                               <ImageView fitHeight="37.0" fitWidth="37.0">
                                  <image>
-                                    <Image url="@../../../../../../Pictures/htd.png" />
+                                    <Image url="@htd.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -74,7 +75,7 @@
                            <graphic>
                               <ImageView fitHeight="32.0" fitWidth="31.0">
                                  <image>
-                                    <Image url="@../../../../../../Pictures/external-content.duckduckgo.com.png" />
+                                    <Image url="@external-content.duckduckgo.com.png" />
                                  </image>
                               </ImageView>
                            </graphic>

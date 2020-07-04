@@ -11,7 +11,7 @@ public class Flight
     private String desination;
     private String date;
     private String takeOffTime;
-    private String nmbrOFsoldTickets;
+    private int nmbrOFsoldTickets;
     private ArrayList<Passanger> passangers;
     private String flightTime;
 
@@ -82,11 +82,11 @@ public class Flight
         this.takeOffTime = takeOffTime;
     }
 
-    public String getNmbrOFsoldTickets() {
+    public int getNmbrOFsoldTickets() {
         return nmbrOFsoldTickets;
     }
 
-    public void setNmbrOFsoldTickets(String nmbrOFsoldTickets) {
+    public void setNmbrOFsoldTickets(int nmbrOFsoldTickets) {
         this.nmbrOFsoldTickets = nmbrOFsoldTickets;
     }
 
@@ -106,15 +106,17 @@ public class Flight
         this.flightTime = flightTime;
     }
 
-    public Flight(String id, Airplane airplane, Ticket ticket, String origin, String desination, String date, String takeOffTime, String nmbrOFsoldTickets, ArrayList<Passanger> passangers, String flightTime) {
+    public Flight(String id, Airplane airplane, Ticket ticket, String origin, String desination, String date, String takeOffTime,  ArrayList<Passanger> passangers, String flightTime) {
+        //idkuyfyu*******************************
         this.id = id;
+
         this.airplane = airplane;
         this.ticket = ticket;
         this.origin = origin;
         this.desination = desination;
         this.date = date;
         this.takeOffTime = takeOffTime;
-        this.nmbrOFsoldTickets = nmbrOFsoldTickets;
+        this.nmbrOFsoldTickets = 0;
         this.passangers = passangers;
         this.flightTime = flightTime;
     }

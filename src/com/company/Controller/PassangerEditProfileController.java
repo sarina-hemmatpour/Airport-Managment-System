@@ -1,7 +1,6 @@
 package com.company.Controller;
 
 import com.company.Main;
-import com.company.Model.ChangeLineInFile;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -10,9 +9,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -152,6 +148,8 @@ public class PassangerEditProfileController implements Initializable
 
             phoneLBL.setText(Main.passangers.get(LoginPageController.loginUserIndex).getPhoneNumber());
 
+            newPhoneTF.setText("");
+
 
         }
     }
@@ -215,6 +213,10 @@ public class PassangerEditProfileController implements Initializable
 
             //editting the object
             Main.passangers.get(LoginPageController.loginUserIndex).setPassword(newPF.getText());
+
+
+            newPF.setText("");
+            oldPF.setText("");
         }
     }
 
@@ -280,6 +282,8 @@ public class PassangerEditProfileController implements Initializable
             Main.passangers.get(LoginPageController.loginUserIndex).setEmailAdress(newEmailTF.getText());
 
             emailLBL.setText(Main.passangers.get(LoginPageController.loginUserIndex).getEmailAdress());
+
+            newEmailTF.setText("");
         }
     }
 }

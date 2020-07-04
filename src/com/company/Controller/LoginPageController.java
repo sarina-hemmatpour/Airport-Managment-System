@@ -117,6 +117,9 @@ public class LoginPageController implements Initializable
                     Stage superAdminStage=new Stage(StageStyle.UNDECORATED);
                     superAdminStage.setScene(new Scene(sapLoader.getRoot()));
                     superAdminStage.show();
+
+                    usernameTF.setText("");
+                    passwordTF.setText("");
                 }
                 else
                 {
@@ -140,6 +143,8 @@ public class LoginPageController implements Initializable
                             //loading manager page
                             //***********************************************
                             loginUserIndex=i;
+                            usernameTF.setText("");
+                            passwordTF.setText("");
                             managerIsFound=true;
                             break;
                         }
@@ -168,6 +173,8 @@ public class LoginPageController implements Initializable
                                 //loading employee page
                                 //***********************************************
                                 loginUserIndex=i;
+                                usernameTF.setText("");
+                                passwordTF.setText("");
                                 employeeIsFound=true;
                                 break;
                             }
@@ -195,7 +202,6 @@ public class LoginPageController implements Initializable
                             {
                                 //password is correct
                                 //loading passanger page
-                                //***********************************************
                                 ((Stage)loginBTN.getScene().getWindow()).close();
                                 loginUserIndex=i;
 
@@ -213,6 +219,8 @@ public class LoginPageController implements Initializable
 
 
                                 System.out.println(loginUserIndex);
+                                usernameTF.setText("");
+                                passwordTF.setText("");
                                 passangerIsFound=true;
                                 break;
                             }

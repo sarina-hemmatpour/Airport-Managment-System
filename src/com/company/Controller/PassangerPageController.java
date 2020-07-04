@@ -2,7 +2,6 @@ package com.company.Controller;
 
 import com.company.Main;
 import com.company.Model.Airplane;
-import com.company.Model.ChangeLineInFile;
 import com.company.Model.Flight;
 import com.company.Model.Ticket;
 import javafx.event.ActionEvent;
@@ -11,7 +10,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -19,7 +17,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class PassangerPageController implements Initializable {
@@ -214,6 +211,7 @@ public class PassangerPageController implements Initializable {
                 Main.passangers.get(LoginPageController.loginUserIndex).setCredit(add);
                 creditLBL.setText(Main.passangers.get(LoginPageController.loginUserIndex).getCredit());
                 warningLBL.setText("");
+                raiseCreditTF.setText("");
             }
         }
     }

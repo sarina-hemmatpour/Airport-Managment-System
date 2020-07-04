@@ -1,2 +1,2 @@
 123456789 TestNameOne TestLastnameOne test1 test1 09011111111 test1@email.com 100
-12345678 TestNameTwo TestNameTwo test2 test22 09022222222 test2@email.com 230
+123456789 TestNameOne TestLastnameOne test1 test1 09011111111 test1@email.com 120

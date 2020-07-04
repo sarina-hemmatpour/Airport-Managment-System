@@ -1,4 +1,4 @@
-package com.company.Model;
+package com.company.Controller;
 
 import java.io.BufferedWriter;
         import java.io.File;
