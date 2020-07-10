@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="608.0" prefWidth="406.0" style="-fx-background-color: f0f8ff;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Controller.SAFlightsPlanesPageController">
+   <children>
+      <BorderPane layoutX="22.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="14.0">
+         <top>
+            <Group BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="139.0" fitWidth="383.0" layoutX="-23.0" layoutY="425.0">
+                     <image>
+                        <Image url="@external-content.duckduckgo.com13514.png" />
+                     </image>
+                  </ImageView>
+                  <Group layoutX="-9.0" layoutY="-26.0">
+                     <children>
+                        <Circle fill="#811eff" layoutX="60.0" layoutY="55.0" radius="8.0" stroke="#811eff" strokeType="INSIDE" />
+                        <Group layoutY="44.0">
+                           <children>
+                              <Button fx:id="addPlaneBTN" layoutX="53.0" layoutY="374.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="297.0" style="-fx-background-color: BBBBBB;" text="Add a Plane">
+                                 <font>
+                                    <Font name="DejaVu Serif Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <TextField fx:id="nmbrOfSeatsTF" layoutX="206.0" layoutY="343.0" prefHeight="25.0" prefWidth="143.0" promptText="number of seats" />
+                              <TextField fx:id="idTF" layoutX="52.0" layoutY="343.0" prefHeight="25.0" prefWidth="150.0" promptText="id" />
+                           </children>
+                        </Group>
+                        <Button fx:id="closeBTN" layoutX="324.0" layoutY="45.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="X" textFill="#ee0606">
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                        </Button>
+                        <TableView fx:id="planesTV" layoutX="50.0" layoutY="175.0" prefHeight="200.0" prefWidth="301.0">
+                          <columns>
+                            <TableColumn fx:id="idTC" prefWidth="75.0" text="ID" />
+                            <TableColumn fx:id="seatsTC" prefWidth="75.0" text="Number of seats" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <Label layoutX="74.0" layoutY="40.0" text="Planes">
+                           <font>
+                              <Font name="DejaVu Serif Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="flightsBTN" layoutX="203.0" layoutY="79.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="145.0" style="-fx-background-color: pink;" text="Flights">
+                           <font>
+                              <Font name="DejaVu Serif Bold" size="11.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="removeBTN" layoutX="52.0" layoutY="79.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="145.0" style="-fx-background-color: pink;" text="Remove">
+                           <font>
+                              <Font name="DejaVu Serif Bold" size="11.0" />
+                           </font>
+                        </Button>
+                        <Line endX="100.0" layoutX="153.0" layoutY="71.0" startX="-100.0" strokeWidth="2.0" />
+                        <Button fx:id="editBTN" layoutX="243.0" layoutY="110.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="105.0" style="-fx-background-color: pink;" text="Edit">
+                           <font>
+                              <Font name="DejaVu Serif Bold" size="11.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="warningLBL" layoutX="56.0" layoutY="150.0" prefHeight="14.0" prefWidth="294.0" textFill="#8521dd" underline="true">
+                           <font>
+                              <Font name="FreeMono Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="editSeatsTF" layoutX="53.0" layoutY="109.0" prefHeight="12.0" prefWidth="185.0" promptText="new number of seats" />
+                     </children>
+                  </Group>
+               </children>
+            </Group>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
