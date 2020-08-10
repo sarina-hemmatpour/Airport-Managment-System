@@ -1,8 +1,7 @@
 package com.company.Controller;
 
 import com.company.Main;
-import com.company.Model.Airplane;
-import com.company.Model.Flight;
+import com.company.Model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.*;
 import java.net.URL;
@@ -33,6 +33,11 @@ public class SAFlightsPlanesPageController implements Initializable {
     @FXML Button flightsBTN;
     @FXML TextField editSeatsTF;
 
+    static boolean flightStageIsOpen=false;
+    public static Stage flightStage;
+
+    public static int airplaneIndex=-1;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -46,60 +51,125 @@ public class SAFlightsPlanesPageController implements Initializable {
         }
 
         closeBTN.setOnAction(e -> {
+
             //closing the tab
             RemoveTabInTabPane removeTabInTabPane=new RemoveTabInTabPane();
             int index=SuperAdminPageController.SAPageTPfake.getTabs().indexOf(SuperAdminPageController.flightsPlanesTab);
             removeTabInTabPane.removeTab( SuperAdminPageController.SAPageTPfake, index);
 
+            if (flightStageIsOpen)
+            {
+                flightStage.close();
+                flightStageIsOpen=false;
+                if (SAFlightsPageController.addStageIsOpen )
+                {
+                    SAFlightsPageController.addStage.close();
+                    SAFlightsPageController.addStageIsOpen=false;
+
+
+                }
+                if (SAFlightsPageController.editStageIsOpen)
+                {
+                    SAFlightsPageController.editStage.close();
+                    SAFlightsPageController.editStageIsOpen=false;
+                }
+                if (SAFlightsPageController.passangerStageIsOpen)
+                {
+                    SAFlightsPageController.passangerStage.close();
+                    SAFlightsPageController.passangerStageIsOpen=false;
+                }
+            }
 
             SuperAdminPageController.planesflightsTabIsOpen=false;
+
         });
 
         addPlaneBTN.setOnAction(e -> {
-            try {
-                addPlaneBTNaction(e);
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        });
-
-        editBTN.setOnAction(e -> editBTNaction(e));
-
-        removeBTN.setOnAction(e -> {
-            try {
-                removeBTNaction(e);
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        });
-
-        flightsBTN.setOnAction(e ->{
-
-            //check if an object is selected
-            if (planesTV.getSelectionModel().getSelectedItem()!=null)
+            if (LoginPageController.position!= LoginPageController.position.Employee)
             {
-                //loading a new stage
-
-                FXMLLoader fxmlLoader=new FXMLLoader(Main.class.getResource("View/SAFlightsPage.fxml"));
-
                 try {
-                    fxmlLoader.load();
+                    addPlaneBTNaction(e);
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
 
-                Stage flightsStage=new Stage();
-                flightsStage.setTitle("Flights");
-                flightsStage.setScene(new Scene(fxmlLoader.getRoot()));
-                flightsStage.show();
-
-                //set id
-                SAFlightsPageController saFlightsPageController=fxmlLoader.getController();
-                saFlightsPageController.airplaneIndex=Main.airplanes.indexOf(planesTV.getSelectionModel().getSelectedItem());
-                System.out.println(saFlightsPageController.airplaneIndex);
-                saFlightsPageController.planeIdLBL.setText(Main.airplanes.get(saFlightsPageController.airplaneIndex).getId());
-
                 warningLBL.setText("");
+            }
+            else
+            {
+                warningLBL.setText("Unaccessible!!!");
+            }
+
+
+        });
+
+        editBTN.setOnAction(e ->{
+            if (LoginPageController.position!= LoginPageController.position.Employee)
+            {
+                editBTNaction(e);
+            }
+            else
+            {
+                warningLBL.setText("Unaccessible!!!");
+            }
+
+            });
+
+        removeBTN.setOnAction(e -> {
+            if (LoginPageController.position!= LoginPageController.position.Employee)
+            {
+                try {
+                    removeBTNaction(e);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+            else
+            {
+                warningLBL.setText("Unaccessible!!!");
+            }
+
+        });
+
+        flightsBTN.setOnAction(e ->{
+
+
+            //check if an object is selected
+            if (planesTV.getSelectionModel().getSelectedItem()!=null)
+            {
+
+                if (!flightStageIsOpen)
+                {
+
+                    airplaneIndex=Main.airplanes.indexOf(planesTV.getSelectionModel().getSelectedItem());
+                    //loading a new stage
+
+                    FXMLLoader fxmlLoader=new FXMLLoader(Main.class.getResource("View/SAFlightsPage.fxml"));
+
+                    try {
+                        fxmlLoader.load();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+
+                    //set id
+                    SAFlightsPageController saFlightsPageController=fxmlLoader.getController();
+                    saFlightsPageController.planeIdLBL.setText(Main.airplanes.get(airplaneIndex).getId());
+
+
+                    Stage flightsStage=new Stage(StageStyle.UNDECORATED);
+                    flightsStage.setScene(new Scene(fxmlLoader.getRoot()));
+                    flightsStage.show();
+
+                    flightStage=flightsStage;
+
+
+
+                    warningLBL.setText("");
+
+                    flightStageIsOpen=true;
+                }
+
 
             }
             else
@@ -126,8 +196,40 @@ public class SAFlightsPlanesPageController implements Initializable {
         }
         else {
 
-            int index = Main.airplanes.indexOf(planesTV.getSelectionModel().getSelectedItem());
+            Airplane airplaneTorRemove=(Airplane)planesTV.getSelectionModel().getSelectedItem();
+            int index = -1;
+            //find the index
+            for (int i=0 ; i<Main.airplanes.size() ; i++)
+            {
+                if (Main.airplanes.get(i).getId().equals(airplaneTorRemove.getId()))
+                {
+                    index=i;
+                    break;
+                }
+            }
 
+
+
+            if (LoginPageController.position== LoginPageController.position.SuperAdmin)
+            {
+                //record
+                Record record=new Record();
+                Main.records.add(record);
+                record.superAdminRemoveAirplane(airplaneTorRemove);
+                //write in file
+                WriteReadFile<Record> recordWriteReadFile=new WriteReadFile<>(Main.records , "Records.txt");
+                recordWriteReadFile.writeList();
+            }
+            else
+            {
+                //record
+                Record record=new Record();
+                Main.records.add(record);
+                record.managerRemoveAirplane(Main.managers.get(LoginPageController.loginUserIndex) , airplaneTorRemove);
+                //write in file
+                WriteReadFile<Record> recordWriteReadFile=new WriteReadFile<>(Main.records , "Records.txt");
+                recordWriteReadFile.writeList();
+            }
 
             //remove in file
 //        String flightsInfo="";
@@ -150,10 +252,51 @@ public class SAFlightsPlanesPageController implements Initializable {
 //        removeLineInFile.removeLine("airplanes.txt" , oldLine);
 
 
+            //remove tickets of this airplane's flights in passengers tickets list
+
+            for (int i=0 ; i<Main.airplanes.get(index).getFlights().size() ; i++)
+            {
+                for (int j = 0; j < Main.passangers.size(); j++) {
+                    for (int l=0 ; l<Main.passangers.get(j).getBaughtTickets().size() ; l++)
+                    {
+                        if (Main.passangers.get(j).getBaughtTickets().get(l).getId().equals(Main.airplanes.get(index).getFlights().get(i).getTicket().getId()))
+                        {
+                            //raise credit
+                            int oldCredit=Integer.parseInt(Main.passangers.get(j).getCredit());
+                            int returnPrice=Integer.parseInt(Main.airplanes.get(index).getFlights().get(i).getTicket().getPrice());
+                            int newCredit=oldCredit+returnPrice;
+                            String tempCredit="";
+                            tempCredit+=newCredit;
+                            Main.passangers.get(j).setCredit(tempCredit);
+
+                            //remove ticket
+                            Main.passangers.get(j).getBaughtTickets().remove(l);
+                        }
+                    }
+                }
+            }
+
+            WriteReadFile<Passanger> passangerWriteReadFile=new WriteReadFile<>( Main.passangers , "Passanger.txt");
+            passangerWriteReadFile.writeList();
+
+            //remove any tickets for the flights of this plane
+            for (int i=0 ; i<Main.airplanes.get(index).getFlights().size() ; i++)
+            {
+                for (int j = 0; j < Main.tickets.size(); j++) {
+                    if (Main.airplanes.get(index).getFlights().get(i).getTicket().getId().equals(Main.tickets.get(j).getId()))
+                    {
+                        Main.tickets.remove(j);
+                    }
+                }
+            }
+
+            WriteReadFile<Ticket> ticketWriteReadFile=new WriteReadFile<>(Main.tickets , "Tickets.txt");
+            ticketWriteReadFile.writeList();
+
             //remove any flights with this airplane
             for (int i = 0; i < Main.airplanes.get(index).getFlights().size(); i++) {
-                for (int j = 0; j < Main.flights.size(); i++) {
-                    if (Main.flights.get(j) == Main.airplanes.get(index).getFlights().get(i)) {
+                for (int j = 0; j < Main.flights.size(); j++) {
+                    if (Main.flights.get(j).getId().equals(Main.airplanes.get(index).getFlights().get(i).getId())) {
                         Main.flights.remove(j);
                         break;
                     }
@@ -316,6 +459,31 @@ public class SAFlightsPlanesPageController implements Initializable {
              planesTV.getItems().add(Main.airplanes.get(Main.airplanes.size()-1));
 
              planesTV.refresh();
+
+
+             if (LoginPageController.position== LoginPageController.position.SuperAdmin)
+             {
+                 //record
+                 Record record=new Record();
+                 Main.records.add(record);
+                 record.superAdminAddAirplane(newPlane);
+                 //write in file
+                 WriteReadFile<Record> recordWriteReadFile=new WriteReadFile<>(Main.records , "Records.txt");
+                 recordWriteReadFile.writeList();
+             }
+             else
+             {
+                 //record
+                 Record record=new Record();
+                 Main.records.add(record);
+                 record.managerAddAirplane(Main.managers.get(LoginPageController.loginUserIndex) , newPlane);
+                 //write in file
+                 WriteReadFile<Record> recordWriteReadFile=new WriteReadFile<>(Main.records , "Records.txt");
+                 recordWriteReadFile.writeList();
+             }
+
+
+
         }
     }
 
