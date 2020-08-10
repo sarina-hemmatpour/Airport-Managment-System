@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="656.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Controller.PassangerFlightPageController">
+   <children>
+      <Group>
+         <children>
+            <ImageView fitHeight="581.0" fitWidth="933.0" layoutX="-135.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sky-altitude-clouds-airplane-wing-flying-soaring-Earth-677388.jpg" />
+               </image>
+            </ImageView>
+            <Group layoutX="-2.0" layoutY="3.0">
+               <children>
+                  <Button fx:id="exitBTN" layoutX="619.0" layoutY="42.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="31.0" style="-fx-background-color: BBBBBB;" text="X" textFill="#f51111">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <TableView fx:id="flightsTV" editable="true" layoutX="14.0" layoutY="134.0" opacity="0.73" prefHeight="390.0" prefWidth="636.0" style="-fx-background-color: F0F8FF;">
+                     <columns>
+                        <TableColumn fx:id="originCLM" prefWidth="86.0" text="Origin" />
+                        <TableColumn fx:id="destinationCLM" prefWidth="82.0" text="Destination" />
+                        <TableColumn fx:id="dateCLM" prefWidth="91.0" text="Date" />
+                        <TableColumn fx:id="timeCLM" prefWidth="94.0" text="Takeoff Time" />
+                        <TableColumn fx:id="statusCLM" prefWidth="117.0" text="Status" />
+                        <TableColumn fx:id="priceCLM" prefWidth="64.0" text="Price" />
+                        <TableColumn fx:id="fineCLM" prefWidth="94.0" text="Fine" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <Button fx:id="cancelBTN" layoutX="229.0" layoutY="536.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: F0F8FF;" text="Cancel The Flight">
+                     <font>
+                        <Font name="DejaVu Serif Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <Group layoutX="63.0" layoutY="-42.0" />
+                  <Label fx:id="warningLBL" layoutX="14.0" layoutY="109.0" prefHeight="15.0" prefWidth="544.0" textFill="#7515d0" underline="true">
+                     <font>
+                        <Font name="FreeMono Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="63.0" layoutY="29.0" text="Your Flights">
+                     <font>
+                        <Font name="DejaVu Serif Bold" size="35.0" />
+                     </font>
+                  </Label>
+                  <Circle fill="#ac1eff" layoutX="45.0" layoutY="51.0" radius="11.0" stroke="#ac1eff" strokeType="INSIDE" />
+               </children>
+            </Group>
+         </children>
+      </Group>
+   </children>
+</AnchorPane>
