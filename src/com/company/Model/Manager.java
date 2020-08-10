@@ -1,11 +1,13 @@
 package com.company.Model;
 
-public class Manager extends Person
+import java.io.Serializable;
+
+
+public class Manager extends Person implements Serializable
 {
     private String salary;
     private String address;
     private boolean isSuperAdmin;
-
 
     public boolean isSuperAdmin() {
         return isSuperAdmin;
@@ -37,4 +39,14 @@ public class Manager extends Person
         this.address = address;
         this.isSuperAdmin=isSuperAdmin;
     }
+
+    @Override
+    public String Show() {
+        String string="";
+        string+=getName()+"-"+getLastname()+"-"+getId()+"-"+getUsername()+"-"+getPassword()+"-"+getPhoneNumber()+"-"+
+                getEmailAdress()+"-"+getAddress()+"-"+getSalary();
+
+        return string;
+    }
+
 }

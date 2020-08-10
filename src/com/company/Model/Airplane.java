@@ -1,8 +1,9 @@
 package com.company.Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Airplane
+public class Airplane implements Serializable,Showable
 {
     private String id;
     private String seats;
@@ -36,5 +37,24 @@ public class Airplane
         this.id = id;
         this.seats = seats;
         this.flights = new ArrayList<>();
+    }
+
+    @Override
+    public String Show() {
+
+        String flightsid="";
+        for (int i=0 ; i<flights.size() ; i++)
+        {
+            flightsid+=flights.get(i);
+            if (i!=flights.size()-1)
+            {
+                flightsid+="-";
+            }
+        }
+
+        String string="";
+        string+=id+"- seats:"+seats+"- flights:"+flightsid;
+
+        return string;
     }
 }

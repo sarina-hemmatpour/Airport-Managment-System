@@ -1,6 +1,8 @@
 package com.company.Model;
 
-public class Employee extends Person
+import java.io.Serializable;
+
+public class Employee extends Person implements Serializable
 {
     private String salary;
     private String address;
@@ -25,5 +27,13 @@ public class Employee extends Person
         super(id, name, lastname, username, password, phoneNumber, emailAdress);
         this.salary = salary;
         this.address=address;
+    }
+
+    @Override
+    public String Show() {
+        String string="";
+        string+=getName()+"-"+getLastname()+"-"+getId()+"-"+getUsername()+"-"+getPassword()+"-"+getPhoneNumber()+"-"+
+                getEmailAdress()+"-"+getAddress()+"-"+getSalary();
+        return string;
     }
 }

@@ -1,12 +1,22 @@
 package com.company.Model;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Message
+public class Message implements Serializable , Showable
 {
     private String time;
     private String text;
+    private String sender;
+
+    public String getSender() {
+        return sender;
+    }
+
+    public void setSender(String sender) {
+        this.sender = sender;
+    }
 
     public String getTime() {
         return time;
@@ -24,7 +34,7 @@ public class Message
         this.text = text;
     }
 
-    public Message(String text) {
+    public Message(String text , String sender) {
         this.text = text;
 
         //set time : now
@@ -32,5 +42,13 @@ public class Message
         LocalDateTime now=LocalDateTime.now();
 
         this.time = dtf.format(now);
+
+        this.sender=sender;
+    }
+
+    @Override
+    public String Show() {
+
+        return sender+"-"+time+"-"+text;
     }
 }

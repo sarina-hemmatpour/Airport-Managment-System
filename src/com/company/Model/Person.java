@@ -1,6 +1,8 @@
 package com.company.Model;
 
-public abstract class Person
+import java.io.Serializable;
+
+public abstract class Person implements Serializable ,Showable
 {
     private String id;
     private String name;

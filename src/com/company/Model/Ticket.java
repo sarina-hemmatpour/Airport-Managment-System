@@ -1,10 +1,12 @@
 package com.company.Model;
 
-public class Ticket
+import java.io.Serializable;
+
+public class Ticket implements Serializable , Showable
 {
     private String id;
     private String price;
-    private String cancelCost;
+    private String fine;
 
     public String getId() {
         return id;
@@ -22,18 +24,23 @@ public class Ticket
         this.price = price;
     }
 
-    public String getCancelCost() {
-        return cancelCost;
+    public String getFine() {
+        return fine;
     }
 
-    public void setCancelCost(String cancelCost) {
-        this.cancelCost = cancelCost;
+    public void setFine(String fine) {
+        this.fine = fine;
     }
 
 
-    public Ticket(String id, String price, String cancelCost) {
+    public Ticket(String id, String price, String fine) {
         this.id = id;
         this.price = price;
-        this.cancelCost = cancelCost;
+        this.fine = fine;
+    }
+
+    @Override
+    public String Show() {
+        return id+"- price:"+price+"-"+fine;
     }
 }

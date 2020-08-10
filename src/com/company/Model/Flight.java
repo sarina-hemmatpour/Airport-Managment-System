@@ -1,8 +1,9 @@
 package com.company.Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Flight
+public class Flight implements Serializable ,Showable
 {
     private String id;
     private Airplane airplane;
@@ -10,12 +11,50 @@ public class Flight
     private String origin;
     private String desination;
     private String date;
-    private String takeOffTime;
-    private int nmbrOFsoldTickets;
+    private String duration;
+    private String nmbrOFsoldTickets;
     private ArrayList<Passanger> passangers;
-    private String flightTime;
+    private String takeOffTime;
+    private String flightPrice;
+    private String flightFine;
 
-    enum Status{ DONE, DOING , notDONE }
+    public String getFlightPrice() {
+        return flightPrice;
+    }
+
+    public void setFlightPrice(String flightPrice) {
+        this.flightPrice = flightPrice;
+    }
+
+    public String getFlightFine() {
+        return flightFine;
+    }
+
+    public void setFlightFine(String flightFine) {
+        this.flightFine = flightFine;
+    }
+
+    @Override
+    public String Show() {
+
+        String passangersid="";
+        for (int i=0 ; i<passangers.size() ; i++)
+        {
+            passangersid+=passangers.get(i);
+            if (i!=passangers.size()-1)
+            {
+                passangersid+="-";
+            }
+        }
+
+        String string=id+"- airplane:"+airplane.getId()+"- ticket:"+ticket.getId()+
+                "- origin:"+origin+"- destination:"+desination+"-"+date+"-"+takeOffTime+
+                "- duration:"+duration+"- passangers:"+passangersid;
+
+        return string;
+    }
+
+    public enum Status{ DONE, DOING , notDONE }
     private Status flightStatus;
 
     public Status getFlightStatus() {
@@ -74,19 +113,19 @@ public class Flight
         this.date = date;
     }
 
-    public String getTakeOffTime() {
-        return takeOffTime;
+    public String getDuration() {
+        return duration;
     }
 
-    public void setTakeOffTime(String takeOffTime) {
-        this.takeOffTime = takeOffTime;
+    public void setDuration(String duration) {
+        this.duration =duration;
     }
 
-    public int getNmbrOFsoldTickets() {
+    public String getNmbrOFsoldTickets() {
         return nmbrOFsoldTickets;
     }
 
-    public void setNmbrOFsoldTickets(int nmbrOFsoldTickets) {
+    public void setNmbrOFsoldTickets(String nmbrOFsoldTickets) {
         this.nmbrOFsoldTickets = nmbrOFsoldTickets;
     }
 
@@ -98,15 +137,15 @@ public class Flight
         this.passangers = passangers;
     }
 
-    public String getFlightTime() {
-        return flightTime;
+    public String getTakeOffTime() {
+        return takeOffTime;
     }
 
-    public void setFlightTime(String flightTime) {
-        this.flightTime = flightTime;
+    public void setTakeOffTime(String takeOffTime) {
+        this.takeOffTime = takeOffTime;
     }
 
-    public Flight(String id, Airplane airplane, Ticket ticket, String origin, String desination, String date, String takeOffTime,  ArrayList<Passanger> passangers, String flightTime) {
+    public Flight(String id, Airplane airplane, Ticket ticket, String origin, String desination, String date, String duration, String takeOffTime) {
         //idkuyfyu*******************************
         this.id = id;
 
@@ -115,9 +154,14 @@ public class Flight
         this.origin = origin;
         this.desination = desination;
         this.date = date;
+        this.duration = duration;
+        this.nmbrOFsoldTickets = "0";
         this.takeOffTime = takeOffTime;
-        this.nmbrOFsoldTickets = 0;
-        this.passangers = passangers;
-        this.flightTime = flightTime;
+        this.flightStatus=Status.notDONE;
+
+        this.flightPrice=this.ticket.getPrice();
+        this.flightFine=this.ticket.getFine();
+
+        this.passangers=new ArrayList<>();
     }
 }
