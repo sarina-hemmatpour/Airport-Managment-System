@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="540.0" style="-fx-background-color: f0f8ff;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Controller.MessageChatPageController">
+   <children>
+      <BorderPane layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <top>
+            <Group BorderPane.alignment="CENTER">
+               <children>
+                  <Group layoutX="-39.0" layoutY="2.0">
+                     <children>
+                        <Label layoutX="74.0" layoutY="17.0" text="Messages:">
+                           <font>
+                              <Font name="DejaVu Serif Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Line endX="100.0" layoutX="154.0" layoutY="37.0" startX="-100.0" strokeWidth="2.0" />
+                        <Circle fill="#7322dd" layoutX="62.0" layoutY="27.0" radius="6.0" stroke="#7322dd" strokeType="INSIDE" />
+                     </children>
+                  </Group>
+                  <TableView fx:id="messagesTV" layoutX="14.0" layoutY="68.0" prefHeight="402.0" prefWidth="511.0">
+                    <columns>
+                      <TableColumn fx:id="senderCLM" prefWidth="91.0" text="Sender" />
+                      <TableColumn fx:id="messageCLM" prefWidth="297.0" text="message" />
+                        <TableColumn fx:id="timeCLM" prefWidth="122.0" text="time" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="closeBTN" layoutX="496.0" layoutY="17.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="23.0" style="-fx-background-color: lightgray;" text="X" textFill="#7322dd">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="warningLBL" layoutX="14.0" layoutY="46.0" prefHeight="15.0" prefWidth="448.0" textFill="#8514e0">
+                     <font>
+                        <Font name="FreeMono Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="deleteBTN" layoutX="432.0" layoutY="17.0" mnemonicParsing="false" style="-fx-background-color: lightgray;" text="Delete">
+                     <font>
+                        <Font name="DejaVu Serif Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Group>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
