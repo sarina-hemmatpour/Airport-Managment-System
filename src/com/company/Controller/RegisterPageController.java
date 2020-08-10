@@ -92,15 +92,18 @@ public class RegisterPageController implements Initializable
 
                         //writing thes information in passanger file
 
-                        FileWriter passangerFW=new FileWriter("Passanger.txt" , true);
-                        BufferedWriter passangerBW=new BufferedWriter(passangerFW);
+//                        FileWriter passangerFW=new FileWriter("Passanger.txt" , true);
+//                        BufferedWriter passangerBW=new BufferedWriter(passangerFW);
+//
+//                        String toSave=(idTF.getText()+" "+nameTF.getText()+" "+lastnameTF.getText()+" "+
+//                                usernameTF.getText()+" "+passwordTF.getText()+" "+phoneNumberTF.getText()+" "+emailAddressTF.getText()+" "+
+//                                creditTF.getText());
+//                        passangerBW.write(toSave);
+//                        passangerBW.newLine();
+//                        passangerBW.close();
 
-                        String toSave=(idTF.getText()+" "+nameTF.getText()+" "+lastnameTF.getText()+" "+
-                                usernameTF.getText()+" "+passwordTF.getText()+" "+phoneNumberTF.getText()+" "+emailAddressTF.getText()+" "+
-                                creditTF.getText());
-                        passangerBW.write(toSave);
-                        passangerBW.newLine();
-                        passangerBW.close();
+                        WriteReadFile<Passanger> passangerWriteReadFile=new WriteReadFile<>(Main.passangers , "Passanger.txt");
+                        passangerWriteReadFile.writeList();
 
                         //register completed
                         ((Stage)signUpBTN.getScene().getWindow()).close();
@@ -122,6 +125,24 @@ public class RegisterPageController implements Initializable
                 return false;
             }
         }
+        for (int i=0 ; i<Main.managers.size() ; i++)
+        {
+            if (idTF.getText().equals(Main.managers.get(i).getId()))
+            {
+                return false;
+            }
+        }
+        for (int i=0 ; i<Main.employees.size() ; i++)
+        {
+            if (idTF.getText().equals(Main.employees.get(i).getId()))
+            {
+                return false;
+            }
+        }
+        if (idTF.getText().equals(Main.superAdmin.getId()))
+        {
+            return false;
+        }
 
         //username:
         for (int i=0 ; i<Main.passangers.size() ; i++)
@@ -131,14 +152,50 @@ public class RegisterPageController implements Initializable
                 return false;
             }
         }
+        for (int i=0 ; i<Main.managers.size() ; i++)
+        {
+            if (usernameTF.getText().equals(Main.managers.get(i).getUsername()))
+            {
+                return false;
+            }
+        }
+        for (int i=0 ; i<Main.employees.size() ; i++)
+        {
+            if (usernameTF.getText().equals(Main.employees.get(i).getUsername()))
+            {
+                return false;
+            }
+        }
+        if (usernameTF.getText().equals(Main.superAdmin.getUsername()))
+        {
+            return false;
+        }
 
         //email:
         for (int i=0 ; i<Main.passangers.size() ; i++)
         {
-            if (emailAddressTF.getText().equals(Main.passangers.get(i).getEmailAdress()))
+            if (emailAddressTF.getText().toLowerCase().equals(Main.passangers.get(i).getEmailAdress().toLowerCase()))
             {
                 return false;
             }
+        }
+        for (int i=0 ; i<Main.managers.size() ; i++)
+        {
+            if (emailAddressTF.getText().toLowerCase().equals(Main.managers.get(i).getEmailAdress().toLowerCase()))
+            {
+                return false;
+            }
+        }
+        for (int i=0 ; i<Main.employees.size() ; i++)
+        {
+            if (emailAddressTF.getText().toLowerCase().equals(Main.employees.get(i).getEmailAdress().toLowerCase()))
+            {
+                return false;
+            }
+        }
+        if (emailAddressTF.getText().toLowerCase().equals(Main.superAdmin.getEmailAdress().toLowerCase()))
+        {
+            return false;
         }
 
         //phone nmbr:
@@ -148,6 +205,24 @@ public class RegisterPageController implements Initializable
             {
                 return false;
             }
+        }
+        for (int i=0 ; i<Main.managers.size() ; i++)
+        {
+            if (phoneNumberTF.getText().equals(Main.managers.get(i).getPhoneNumber()))
+            {
+                return false;
+            }
+        }
+        for (int i=0 ; i<Main.employees.size() ; i++)
+        {
+            if (phoneNumberTF.getText().equals(Main.employees.get(i).getPhoneNumber()))
+            {
+                return false;
+            }
+        }
+        if (phoneNumberTF.getText().equals(Main.superAdmin.getPhoneNumber()))
+        {
+            return false;
         }
 
         return true;
@@ -187,24 +262,24 @@ public class RegisterPageController implements Initializable
 
     private boolean checkSpace()
     {
-        //name:
-            String check1=nameTF.getText();
-            check1=check1.trim();
-            String[] tempCheck1=check1.split(" ");
-            if (tempCheck1.length>1)
-            {
-                return false;
-            }
-
-
-        //lastname
-            String check2=lastnameTF.getText();
-            check2=check2.trim();
-            String[] tempCheck2=check2.split(" ");
-            if (tempCheck2.length>1)
-            {
-                return false;
-            }
+//        //name:
+//            String check1=nameTF.getText();
+//            check1=check1.trim();
+//            String[] tempCheck1=check1.split(" ");
+//            if (tempCheck1.length>1)
+//            {
+//                return false;
+//            }
+//
+//
+//        //lastname
+//            String check2=lastnameTF.getText();
+//            check2=check2.trim();
+//            String[] tempCheck2=check2.split(" ");
+//            if (tempCheck2.length>1)
+//            {
+//                return false;
+//            }
 
         //usernsme
             String check3=usernameTF.getText();
@@ -242,14 +317,14 @@ public class RegisterPageController implements Initializable
                 return false;
             }
 
-        //address
-            String check7=addressTF.getText();
-            check7=check7.trim();
-            String[] tempCheck7=check7.split(" ");
-            if (tempCheck7.length>1)
-            {
-                return false;
-            }
+//        //address
+//            String check7=addressTF.getText();
+//            check7=check7.trim();
+//            String[] tempCheck7=check7.split(" ");
+//            if (tempCheck7.length>1)
+//            {
+//                return false;
+//            }
 
         //email adress
             String check8=emailAddressTF.getText();
