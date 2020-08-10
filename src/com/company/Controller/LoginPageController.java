@@ -32,6 +32,9 @@ public class LoginPageController implements Initializable
 
     public static int loginUserIndex;
 
+    public enum position{SuperAdmin,Manager,Employee}
+    public static position position;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -54,14 +57,14 @@ public class LoginPageController implements Initializable
 
         forgotPasswordBTN.setOnAction(e -> {
             try {
-                setForgotPasswordBTNaction(e);
+                forgotPasswordBTNaction(e);
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
         });
     }
 
-    private void setForgotPasswordBTNaction(ActionEvent e) throws IOException {
+    private void forgotPasswordBTNaction(ActionEvent e) throws IOException {
 
 
         FXMLLoader fppLoader=new FXMLLoader(Main.class.getResource("View/getPasswordPage.fxml"));
@@ -114,9 +117,16 @@ public class LoginPageController implements Initializable
                         ex.printStackTrace();
                     }
 
+                    SuperAdminPageController controller=sapLoader.getController();
+                    controller.infoLBL.setText(Main.superAdmin.getName() + " " + Main.superAdmin.getLastname());
+                    controller.positionLBL.setText("Super Admin");
+
+
+
                     Stage superAdminStage=new Stage(StageStyle.UNDECORATED);
                     superAdminStage.setScene(new Scene(sapLoader.getRoot()));
                     superAdminStage.show();
+                    position= LoginPageController.position.SuperAdmin;
 
                     usernameTF.setText("");
                     passwordTF.setText("");
@@ -141,10 +151,30 @@ public class LoginPageController implements Initializable
                         {
                             //password is correct
                             //loading manager page
-                            //***********************************************
                             loginUserIndex=i;
+
+                            FXMLLoader Loader=new FXMLLoader(Main.class.getResource("View/SuperAdminPage.fxml"));
+                            try {
+                                Loader.load();
+                            } catch (IOException ex) {
+                                ex.printStackTrace();
+                            }
+
+                            SuperAdminPageController controller=Loader.getController();
+                            controller.infoLBL.setText(Main.managers.get(loginUserIndex).getName() + " " + Main.managers.get(loginUserIndex).getLastname());
+                            controller.positionLBL.setText("Manager");
+
+
+
+                            Stage stage=new Stage(StageStyle.UNDECORATED);
+                            stage.setScene(new Scene(Loader.getRoot()));
+                            stage.show();
+
+                            position= LoginPageController.position.Manager;
+
                             usernameTF.setText("");
                             passwordTF.setText("");
+                            ((Stage)loginBTN.getScene().getWindow()).close();
                             managerIsFound=true;
                             break;
                         }
@@ -173,6 +203,27 @@ public class LoginPageController implements Initializable
                                 //loading employee page
                                 //***********************************************
                                 loginUserIndex=i;
+
+                                FXMLLoader Loader=new FXMLLoader(Main.class.getResource("View/SuperAdminPage.fxml"));
+                                try {
+                                    Loader.load();
+                                } catch (IOException ex) {
+                                    ex.printStackTrace();
+                                }
+
+                                SuperAdminPageController controller=Loader.getController();
+                                controller.infoLBL.setText(Main.employees.get(loginUserIndex).getName() + " " + Main.employees.get(loginUserIndex).getLastname());
+                                controller.positionLBL.setText("Employee");
+
+
+
+                                Stage stage=new Stage(StageStyle.UNDECORATED);
+                                stage.setScene(new Scene(Loader.getRoot()));
+                                stage.show();
+
+                                position= LoginPageController.position.Employee;
+
+                                ((Stage)loginBTN.getScene().getWindow() ).close();
                                 usernameTF.setText("");
                                 passwordTF.setText("");
                                 employeeIsFound=true;
@@ -202,7 +253,7 @@ public class LoginPageController implements Initializable
                             {
                                 //password is correct
                                 //loading passanger page
-                                ((Stage)loginBTN.getScene().getWindow()).close();
+
                                 loginUserIndex=i;
 
                                 FXMLLoader passangerLoader=new FXMLLoader(Main.class.getResource("View/PassangerPage.fxml"));
@@ -221,6 +272,7 @@ public class LoginPageController implements Initializable
                                 System.out.println(loginUserIndex);
                                 usernameTF.setText("");
                                 passwordTF.setText("");
+                                ((Stage)loginBTN.getScene().getWindow()).close();
                                 passangerIsFound=true;
                                 break;
                             }
