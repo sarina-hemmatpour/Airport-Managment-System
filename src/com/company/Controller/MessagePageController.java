@@ -20,6 +20,8 @@ public class MessagePageController implements Initializable
     @FXML Button sendBTN;
     @FXML TextArea messageTA;
 
+    public String sender;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -41,18 +43,22 @@ public class MessagePageController implements Initializable
     private void sendBTNaction(ActionEvent e) throws IOException {
         if (! messageTA.getText().isEmpty())
         {
-            Message newMassage=new Message(messageTA.getText());
+            Message newMassage=new Message(messageTA.getText() , sender);
 
             Main.messages.add(newMassage);
 
             //save message in file
-            BufferedWriter bufferedWriter=new BufferedWriter(new FileWriter("Messages.txt" , true));
+            WriteReadFile<Message> messageWriteReadFile=new WriteReadFile<>(Main.messages , "Messages.txt");
+            messageWriteReadFile.writeList();
 
-            String toSave=(newMassage.getTime()+";"+newMassage.getText());
-
-            bufferedWriter.write(toSave);
-            bufferedWriter.newLine();
-            bufferedWriter.close();
+            //save message in file
+//            BufferedWriter bufferedWriter=new BufferedWriter(new FileWriter("Messages.txt" , true));
+//
+//            String toSave=(newMassage.getTime()+";"+newMassage.getText());
+//
+//            bufferedWriter.write(toSave);
+//            bufferedWriter.newLine();
+//            bufferedWriter.close();
 
             ((Stage)cancelBTN.getScene().getWindow()).close();
             PassangerPageController.messagePageIsOpen=false;
