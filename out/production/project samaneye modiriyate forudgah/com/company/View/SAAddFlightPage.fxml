@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="556.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Controller.SAAddFlightPageController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-300.0" AnchorPane.rightAnchor="-300.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <Group BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="556.0" fitWidth="1061.0" layoutX="-194.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@maxresdefault.jpg" />
+                     </image>
+                  </ImageView>
+                  <AnchorPane layoutX="106.0" layoutY="32.0" prefHeight="493.0" prefWidth="388.0" style="-fx-background-color: white; -fx-background-radius: 50; -fx-opacity: 0.8;">
+                     <children>
+                        <Group layoutX="-60.0" layoutY="33.0">
+                           <children>
+                              <Group>
+                                 <children>
+                                    <Label layoutX="104.0" layoutY="99.0" text="Origin:">
+                                       <font>
+                                          <Font name="FreeMono Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="durationTF" layoutX="231.0" layoutY="220.0" prefHeight="25.0" prefWidth="173.0" promptText="duration">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label layoutX="104.0" layoutY="189.0" text="Take off Time:">
+                                       <font>
+                                          <Font name="FreeMono Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="104.0" layoutY="220.0" text="Duration:">
+                                       <font>
+                                          <Font name="FreeMono Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="destinationTF" layoutX="275.0" layoutY="129.0" prefHeight="25.0" prefWidth="130.0" promptText="destination">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label layoutX="104.0" layoutY="129.0" text="Destination:">
+                                       <font>
+                                          <Font name="FreeMono Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="idTF" layoutX="152.0" layoutY="67.0" prefHeight="23.0" prefWidth="252.0" promptText="id">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label layoutX="104.0" layoutY="159.0" text="Date:">
+                                       <font>
+                                          <Font name="FreeMono Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="104.0" layoutY="66.0" text="ID:">
+                                       <font>
+                                          <Font name="FreeMono Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="originTF" layoutX="207.0" layoutY="99.0" prefHeight="25.0" prefWidth="198.0" promptText="origin">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="timeTF" layoutX="304.0" layoutY="189.0" prefHeight="25.0" prefWidth="101.0" promptText="hh:mm">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="dateTF" layoutX="178.0" layoutY="159.0" prefHeight="25.0" prefWidth="227.0" promptText="yy/mm/dd">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </Group>
+                              <Group layoutY="134.0">
+                                 <children>
+                                    <Button fx:id="cancelBTN" layoutX="297.0" layoutY="253.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="107.0" style="-fx-background-color: f0f8ff;" text="cancel">
+                                       <font>
+                                          <Font name="DejaVu Serif Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="addBTN" layoutX="104.0" layoutY="253.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="184.0" style="-fx-background-color: BBBBBB;" text="Add">
+                                       <font>
+                                          <Font name="DejaVu Serif Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Group>
+                              <Group layoutX="2.0" layoutY="-22.0">
+                                 <children>
+                                    <Label layoutX="127.0" layoutY="36.0" text="Add a Flight">
+                                       <font>
+                                          <Font name="DejaVu Serif Bold" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Line endX="100.0" layoutX="300.0" layoutY="70.0" startX="-100.0" strokeWidth="3.0" />
+                                    <Line endX="100.0" layoutX="204.0" layoutY="70.0" startX="-100.0" strokeWidth="3.0" />
+                                    <Circle fill="#8b1eff" layoutX="110.0" layoutY="49.0" radius="8.0" stroke="#8b1eff" strokeType="INSIDE" />
+                                 </children>
+                              </Group>
+                              <Group layoutX="3.0" layoutY="-6.0">
+                                 <children>
+                                    <Group layoutY="224.0">
+                                       <children>
+                                          <Label layoutX="127.0" layoutY="36.0" text="Ticket:">
+                                             <font>
+                                                <Font name="DejaVu Serif Bold" size="22.0" />
+                                             </font>
+                                          </Label>
+                                          <Line endX="100.0" layoutX="300.0" layoutY="70.0" startX="-100.0" strokeWidth="3.0" />
+                                          <Line endX="100.0" layoutX="204.0" layoutY="70.0" startX="-100.0" strokeWidth="3.0" />
+                                          <Circle fill="#8b1eff" layoutX="110.0" layoutY="49.0" radius="8.0" stroke="#8b1eff" strokeType="INSIDE" />
+                                       </children>
+                                    </Group>
+                                    <Group>
+                                       <children>
+                                          <TextField fx:id="priceTF" layoutX="188.0" layoutY="306.0" prefHeight="25.0" prefWidth="214.0" promptText="price">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="102.0" layoutY="307.0" text="Price:">
+                                             <font>
+                                                <Font name="FreeMono Bold" size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="102.0" layoutY="337.0" text="fine:">
+                                             <font>
+                                                <Font name="FreeMono Bold" size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="fineTF" layoutX="178.0" layoutY="337.0" prefHeight="25.0" prefWidth="224.0" promptText="x%">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </Group>
+                                 </children>
+                              </Group>
+                              <Label fx:id="warningLBL" layoutX="105.0" layoutY="364.0" prefHeight="14.0" prefWidth="297.0" textFill="#8a30e4" underline="true">
+                                 <font>
+                                    <Font name="FreeMono Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Group>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Group>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

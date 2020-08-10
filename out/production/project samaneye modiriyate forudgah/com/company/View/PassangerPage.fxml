@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<TabPane fx:id="passangerPageTP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="609.0" prefWidth="660.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Controller.PassangerPageController">
+<TabPane fx:id="passangerPageTP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="609.0" prefWidth="660.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Controller.PassangerPageController">
   <tabs>
     <Tab style="-fx-background-color: slategray;" text="Account">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="576.0" prefWidth="710.0" style="-fx-background-color: lightblue;">
                <children>
-                  <Group AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                  <ImageView fitHeight="581.0" fitWidth="933.0" layoutX="-135.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@sky-altitude-clouds-airplane-wing-flying-soaring-Earth-677388.jpg" />
+                     </image>
+                  </ImageView>
+                  <Group layoutX="-2.0" layoutY="3.0">
                      <children>
                         <Button fx:id="messageBTN" layoutX="587.0" layoutY="68.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="42.0" style="-fx-background-color: BBBBBB;">
                            <graphic>
@@ -23,7 +29,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Label fx:id="infoLBL" layoutX="77.0" layoutY="18.0" prefHeight="21.0" prefWidth="408.0" text="Sarina Hemmatpour">
+                        <Label fx:id="infoLBL" layoutX="77.0" layoutY="18.0" prefHeight="21.0" prefWidth="408.0">
                            <font>
                               <Font name="DejaVu Serif Bold" size="18.0" />
                            </font>
@@ -46,26 +52,24 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <TableView fx:id="flightsTV" editable="true" layoutX="14.0" layoutY="134.0" prefHeight="390.0" prefWidth="632.0" style="-fx-background-color: F0F8FF;">
-                          <columns>
-                            <TableColumn fx:id="originCLM" prefWidth="86.0" text="Origin" />
-                            <TableColumn fx:id="destinationCLM" prefWidth="82.0" text="Destination" />
-                              <TableColumn fx:id="dateCLM" prefWidth="91.0" text="Date" />
-                              <TableColumn fx:id="timeCLM" prefWidth="94.0" text="Time" />
-                              <TableColumn fx:id="priceCLM" prefWidth="92.0" text="Price" />
-                              <TableColumn fx:id="seatsCLM" prefWidth="83.0" text="Seats" />
-                              <TableColumn fx:id="ticketsCLM" prefWidth="71.0" text="Your Tickets" />
-                          </columns>
+                        <TableView fx:id="flightsTV" editable="true" layoutX="14.0" layoutY="134.0" opacity="0.73" prefHeight="390.0" prefWidth="636.0" style="-fx-background-color: F0F8FF;">
                            <columnResizePolicy>
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                            </columnResizePolicy>
+                           <columns>
+                              <TableColumn fx:id="originCLM" prefWidth="86.0" text="Origin" />
+                              <TableColumn fx:id="destinationCLM" prefWidth="82.0" text="Destination" />
+                              <TableColumn fx:id="dateCLM" prefWidth="91.0" text="Date" />
+                              <TableColumn fx:id="timeCLM" prefWidth="94.0" text="Takeoff Time" />
+                              <TableColumn fx:id="priceCLM" prefWidth="94.0" text="Price" />
+                           </columns>
                         </TableView>
-                        <Button layoutX="229.0" layoutY="536.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: F0F8FF;" text="buy">
+                        <Button fx:id="buyBTN" layoutX="229.0" layoutY="536.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: F0F8FF;" text="buy">
                            <font>
                               <Font name="DejaVu Serif Bold" size="13.0" />
                            </font>
                         </Button>
-                        <Button layoutX="14.0" layoutY="75.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="221.0" style="-fx-background-color: F0F8FF;" text="My Tickets">
+                        <Button fx:id="myTicketsBTN" layoutX="14.0" layoutY="75.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="221.0" style="-fx-background-color: F0F8FF;" text="My Tickets">
                            <font>
                               <Font name="DejaVu Serif Bold" size="13.0" />
                            </font>

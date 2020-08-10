@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="829.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Controller.SAFlightsPageController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="-78.0" AnchorPane.rightAnchor="-78.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <Group BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="555.0" fitWidth="984.0" layoutX="-77.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@maxresdefault.jpg" />
+                     </image>
+                  </ImageView>
+                  <AnchorPane layoutX="20.0" layoutY="20.0" prefHeight="500.0" prefWidth="779.0" style="-fx-background-color: white; -fx-background-radius: 40; -fx-opacity: 0.85;">
+                     <children>
+                        <Group layoutX="-1.0" layoutY="-17.0">
+                           <children>
+                              <Group>
+                                 <children>
+                                    <Group layoutX="-4.0" layoutY="30.0">
+                                       <children>
+                                          <Label fx:id="warningLBL" layoutX="14.0" layoutY="153.0" prefHeight="15.0" prefWidth="622.0" textFill="#7f25ee" underline="true">
+                                             <font>
+                                                <Font name="FreeMono Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Group layoutY="11.0">
+                                             <children>
+                                                <Button fx:id="passangersBTN" layoutX="14.0" layoutY="108.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="407.0" style="-fx-background-color: f0f8ff;" text="Passangers">
+                                                   <font>
+                                                      <Font name="DejaVu Serif Bold" size="13.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button fx:id="editBTN" layoutX="154.0" layoutY="72.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="127.0" style="-fx-background-color: BBBBBB;" text="Edit">
+                                                   <font>
+                                                      <Font name="DejaVu Serif Bold" size="13.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button fx:id="addBTN" layoutX="14.0" layoutY="72.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="127.0" style="-fx-background-color: BBBBBB;" text="Add">
+                                                   <font>
+                                                      <Font name="DejaVu Serif Bold" size="13.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button fx:id="removeBTN" layoutX="294.0" layoutY="72.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="127.0" style="-fx-background-color: BBBBBB;" text="Remove">
+                                                   <font>
+                                                      <Font name="DejaVu Serif Bold" size="13.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </Group>
+                                       </children>
+                                    </Group>
+                                    <Group layoutX="-72.0" layoutY="18.0">
+                                       <children>
+                                          <Line endX="100.0" layoutX="387.0" layoutY="85.0" startX="-100.0" strokeWidth="3.0" />
+                                          <Circle fill="#7f25ee" layoutX="90.0" layoutY="60.0" radius="8.0" stroke="#7f25ee" strokeType="INSIDE" />
+                                          <Line endX="100.0" layoutX="184.0" layoutY="85.0" startX="-100.0" strokeWidth="3.0" />
+                                          <Label fx:id="planeIdLBL" layoutX="247.0" layoutY="47.0" prefHeight="27.0" prefWidth="213.0">
+                                             <font>
+                                                <Font name="FreeMono Bold" size="26.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="105.0" layoutY="44.0" text="AirPlane:">
+                                             <font>
+                                                <Font name="DejaVu Serif Bold" size="26.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Group>
+                                 </children>
+                              </Group>
+                              <TableView fx:id="flightsTV" layoutX="10.0" layoutY="208.0" prefHeight="264.0" prefWidth="747.0">
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                                 <columns>
+                                    <TableColumn fx:id="idCLM" prefWidth="75.0" text="ID" />
+                                    <TableColumn fx:id="originCLM" prefWidth="75.0" text="Origin" />
+                                    <TableColumn fx:id="destinationCLM" prefWidth="75.0" text="Destination" />
+                                    <TableColumn fx:id="dateCLM" prefWidth="75.0" text="Date" />
+                                    <TableColumn fx:id="timeCLM" prefWidth="75.0" text="Time" />
+                                    <TableColumn fx:id="durationCLM" prefWidth="75.0" text="duration" />
+                                    <TableColumn fx:id="ticketNumberCLM" prefWidth="75.0" text="Tickets" />
+                                    <TableColumn fx:id="statusCLM" prefWidth="75.0" text="Status" />
+                                    <TableColumn fx:id="priceCLM" prefWidth="75.0" text="Price" />
+                                 </columns>
+                              </TableView>
+                              <Button fx:id="closeBTN" layoutX="731.0" layoutY="64.0" mnemonicParsing="false" style="-fx-background-color: f0f8ff;" text="X" textFill="#e80b0b" />
+                           </children>
+                        </Group>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Group>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

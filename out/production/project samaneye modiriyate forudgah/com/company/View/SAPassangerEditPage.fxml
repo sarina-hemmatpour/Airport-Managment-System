@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="406.0" prefWidth="370.0" style="-fx-background-color: BBBBBB;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Controller.SAPassangerEditPageController">
+   <children>
+      <BorderPane layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <left>
+            <Group BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="118.0" layoutY="215.0" text="Password: ">
+                     <font>
+                        <Font name="FreeMono Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Group layoutX="118.0" layoutY="305.0">
+                     <children>
+                        <Label layoutX="1.0" text="Credit: ">
+                           <font>
+                              <Font name="FreeMono Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="editBTN" layoutY="33.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="203.0" style="-fx-background-color: lightblue;" text="Edit">
+                           <font>
+                              <Font name="DejaVu Serif Bold" size="13.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="warningLBL" layoutX="2.0" layoutY="72.0" prefHeight="15.0" prefWidth="335.0" textFill="#7e1eff" underline="true">
+                           <font>
+                              <Font name="FreeMono Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="creditTF" layoutX="102.0" prefHeight="25.0" prefWidth="235.0" promptText="X" />
+                        <Button fx:id="cancelBTN" layoutX="208.0" layoutY="33.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="130.0" style="-fx-background-color: F0F8FF;" text="Cancel">
+                           <font>
+                              <Font name="DejaVu Serif Bold" size="13.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Group>
+                  <TextField fx:id="idTF" layoutX="163.0" layoutY="151.0" prefHeight="25.0" prefWidth="293.0" promptText="id" />
+                  <Circle fill="#7e1eff" layoutX="127.0" layoutY="43.0" radius="10.0" stroke="#7e1eff" strokeType="INSIDE" />
+                  <Label layoutX="118.0" layoutY="182.0" text="Username: ">
+                     <font>
+                        <Font name="FreeMono Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="118.0" layoutY="247.0" text="Phone Number: ">
+                     <font>
+                        <Font name="FreeMono Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="117.0" layoutY="116.0" text="Lastname: ">
+                     <font>
+                        <Font name="FreeMono Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nameTF" layoutX="194.0" layoutY="82.0" prefHeight="25.0" prefWidth="262.0" promptText="name" />
+                  <Label layoutX="118.0" layoutY="82.0" text="Name: ">
+                     <font>
+                        <Font name="FreeMono Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Line endX="100.0" layoutX="219.0" layoutY="70.0" startX="-100.0" strokeWidth="3.0" />
+                  <Label layoutX="143.0" layoutY="25.0" text="Edit the Passanger">
+                     <font>
+                        <Font name="DejaVu Serif Bold" size="29.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="emailAddressTF" layoutX="310.0" layoutY="279.0" prefHeight="25.0" prefWidth="144.0" promptText="user@example.com" />
+                  <TextField fx:id="usernameTF" layoutX="247.0" layoutY="182.0" prefHeight="25.0" prefWidth="210.0" promptText="username" />
+                  <TextField fx:id="lastnameTF" layoutX="246.0" layoutY="116.0" prefHeight="25.0" prefWidth="210.0" promptText="lastname" />
+                  <Label layoutX="118.0" layoutY="279.0" text="Email Adress: ">
+                     <font>
+                        <Font name="FreeMono Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="118.0" layoutY="151.0" text="ID: ">
+                     <font>
+                        <Font name="FreeMono Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="phoneNumberTF" layoutX="310.0" layoutY="247.0" prefHeight="25.0" prefWidth="144.0" promptText="09XXXXXXXXX" />
+                  <TextField fx:id="passwordTF" layoutX="247.0" layoutY="214.0" prefHeight="26.0" prefWidth="210.0" promptText="password" />
+               </children>
+            </Group>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>
