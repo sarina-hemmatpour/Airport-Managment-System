@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="pmRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="246.0" style="-fx-background-color: lightgray; -fx-background-radius: 30;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Controller.MessageShapeController">
+   <children>
+      <Group layoutX="-97.0" layoutY="-20.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <children>
+            <Label fx:id="timeLBL" layoutX="112.0" layoutY="108.0" prefHeight="15.0" prefWidth="179.0" text="time" textAlignment="RIGHT" textFill="#7c7a7a">
+               <font>
+                  <Font name="FreeMono Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="senderLBL" layoutX="111.0" layoutY="34.0" prefHeight="15.0" prefWidth="101.0" text="Passanger:" textFill="#7c7a7a">
+               <font>
+                  <Font name="FreeMono Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="massageTA" editable="false" layoutX="111.0" layoutY="55.0" prefHeight="53.0" prefWidth="214.0" style="-fx-background-color: gray; -fx-border-color: gray;">
+               <font>
+                  <Font name="FreeMono Bold" size="14.0" />
+               </font>
+            </TextArea>
+         </children>
+      </Group>
+   </children>
+</AnchorPane>
